@@ -1,4 +1,4 @@
-this app for make auth in api with useing twilio to send sms code
+this app for make auth in api with useing twilio to send sms code and admin panel for manage users
 
 To run project :
     1-composer install 
