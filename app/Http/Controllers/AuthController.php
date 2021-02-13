@@ -60,7 +60,6 @@ class AuthController extends Controller
 
         return response()->json([
             'message' => 'We send code to  Number '. $VeryfyUser->mobile .' to Verify, please check that',
-            'user' => $VeryfyUser
         ], 201);
     }
 
@@ -89,10 +88,7 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        // $user_validate = User::create(
-        //     ['mobile_verified_at' => now()]
-        // );
-
+        
         return $this->respondWithToken($token);
     }
 
