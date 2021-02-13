@@ -32,7 +32,7 @@ class AuthController extends Controller
      */
     public function register(Request $request) {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|string|between:2,100',
+            'username' => 'required|unique:users|string|between:2,100',
             'mobile' => 'required|max:20|unique:users',
             'password' => 'required|min:3',
         ]);
@@ -43,10 +43,6 @@ class AuthController extends Controller
 
 
 
-        // $user = User::create(array_merge(
-        //             $validator->validated(),
-        //             ['password' => bcrypt($request->password)]
-        //         ));
 
                 $VeryfyUser = new User();
                 $VeryfyUser->username = $request->username;
