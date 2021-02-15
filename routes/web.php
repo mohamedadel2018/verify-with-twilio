@@ -27,7 +27,7 @@ Route::resource('users', 'App\Http\Controllers\Admin\usersController');
 
 
 Route::group(['prefix' => 'admin', ], function () {
-    Route::post('/', [loginController::class, 'login'])->middleware('auth:admin')->name('admin.login')->middleware('auth:admin');
+    Route::post('/', [loginController::class, 'login'])->name('admin.login');
     Route::get('/dashboard',[loginController::class, 'dashboard'])->middleware('auth:admin')->name('dashboard');
     Route::get('/loginadmin',function (){ return view('admin.adminlogin');})->name('admin.adminlogin');
 });
